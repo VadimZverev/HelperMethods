@@ -16,10 +16,11 @@ namespace HelperMethods.Infrastructure
             return new MvcHtmlString(tag.ToString());
         }
 
-        public static string /*MvcHtmlString*/ DisplayMessage(this HtmlHelper html, string msg)
+        public static MvcHtmlString DisplayMessage(this HtmlHelper html, string msg)
         {
-            /*string result = */ return string.Format($"This is the message: <p>{msg}</p>");
-            //return new MvcHtmlString(result);
+            string encodeMessage = html.Encode(msg);
+            string result = string.Format($"This is the message: <p>{encodeMessage}</p>");
+            return new MvcHtmlString(result);
         }
     }
 }
