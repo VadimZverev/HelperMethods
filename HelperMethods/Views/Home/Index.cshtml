@@ -5,10 +5,12 @@
 
 @helper ListArrayItems(string[] items)
 {
-    foreach (string str in items)
-    {
-        <b>@str</b>
-    }
+    <ul>
+        @foreach (string str in items)
+        {
+            <li>@str</li>
+        }
+    </ul>
 }
 
 <!DOCTYPE html>
