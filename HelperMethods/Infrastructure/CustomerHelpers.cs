@@ -13,8 +13,13 @@ namespace HelperMethods.Infrastructure
                 itemTag.SetInnerText(str);
                 tag.InnerHtml += itemTag.ToString();
             }
-
             return new MvcHtmlString(tag.ToString());
+        }
+
+        public static MvcHtmlString DisplayMessage(this HtmlHelper html, string msg)
+        {
+            string result = string.Format($"This is the message: <p>{msg}</p>");
+            return new MvcHtmlString(result);
         }
     }
 }
