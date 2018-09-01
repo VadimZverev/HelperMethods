@@ -10,15 +10,15 @@
 {
     <div class="dataElem">
         <label>PersonId</label>
-        @Html.TextBox("PersonId")
+        @Html.TextBoxFor(m => m.PersonId)
     </div>
     <div class="dataElem">
         <label>First Name</label>
-        @Html.TextBox("firstName")
+        @Html.TextBoxFor(m => m.FirstName)
     </div>
     <div class="dataElem">
         <label>Last Name</label>
-        @Html.TextBox("lastName")
+        @Html.TextBoxFor(m => m.LastName)
     </div>
     <input type="submit" value="Submit" />
 }
