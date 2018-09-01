@@ -15,7 +15,7 @@ namespace HelperMethods.Controllers
 
         public ActionResult CreatePerson()
         {
-            return View();
+            return View(new Person());
         }
 
         [HttpPost]
