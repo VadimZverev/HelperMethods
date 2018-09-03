@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/Site.css" rel="stylesheet" />
     <style type="text/css">
@@ -13,6 +13,38 @@
 
         .dataElem {
             margin: 5px;
+        }
+
+        h2 > label {
+            width: inherit;
+        }
+
+        .editor-label, .editor-field {
+            float: left;
+        }
+
+            .editor-label, .editor-label label, .editor-field input {
+                height: 20px;
+            }
+
+        .editor-label {
+            clear: left;
+        }
+
+        .editor-field {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        input[type=submit] {
+            float: left;
+            clear: both;
+            margin-top: 10px;
+        }
+
+        .column {
+            float: left;
+            margin: 10px;
         }
     </style>
 </head>
