@@ -27,5 +27,8 @@ namespace HelperMethods.Models
         [Display(Name = "Approved")]
         public bool isApproved { get; set; }
 
+        [UIHint("Enum")]
+        public Role Role { get; set; }
+
     }
 }
