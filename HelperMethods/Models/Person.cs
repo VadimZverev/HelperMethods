@@ -1,11 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace HelperMethods.Models
 {
     public class Person
     {
-        [HiddenInput(DisplayValue = false)]
+        //[HiddenInput(DisplayValue = false)]
+        [ScaffoldColumn(false)]
         public int PersonId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
