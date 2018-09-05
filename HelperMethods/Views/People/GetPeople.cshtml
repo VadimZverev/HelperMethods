@@ -12,17 +12,14 @@
     };
 }
 <script type="text/javascript">
-    function OnBegin() {
-        alert("This is the OnBegin Callback");
-    }
-    function OnSuccess(data) {
-        alert("This is the OnSuccess Callback: " + data);
-    }
-    function OnFailure(request, error) {
-        alert("This is the OnFailure Callback:" + error);
-    }
-    function OnComplete(request, status) {
-        alert("This is the OnComplete Callback: " + status);
+    function processData(data) {
+        var target = $("#tableBody");
+        target.empty();
+        for (var i = 0; i < data.length; i++) {
+            var person = data[i];
+            target.append("<tr><td>" + person.FirstName + "</td><td>"
+                + person.LastName + "</td><td>" + person.Role + "</td></tr>");
+        }
     }
 </script>
 <h2>Get People</h2>
@@ -59,12 +56,8 @@
                 new { selectedRole = role},
                 new AjaxOptions
                 {
-                    UpdateTargetId = "tableBody",
                     Url = Url.Action("GetPeopleData", new { selectedRole = role }),
-                    OnBegin = "OnBegin",
-                    OnFailure = "OnFailure",
-                    OnSuccess = "OnSuccess",
-                    OnComplete = "OnComplete"
+                    OnSuccess = "processData"
                 })
         </div>
     }
