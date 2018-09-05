@@ -42,9 +42,13 @@
     @foreach (string role in Enum.GetNames(typeof(Role)))
     {
         <div class="ajaxLink">
-            @Ajax.ActionLink(role,"GetPeopleData",
+            @Ajax.ActionLink(role,"GetPeople",
                 new { selectedRole = role},
-                new AjaxOptions { UpdateTargetId="tableBody"})
+                new AjaxOptions
+                {
+                    UpdateTargetId = "tableBody",
+                    Url = Url.Action("GetPeopleData", new { selectedRole = role })
+                })
         </div>
     }
 </div>
