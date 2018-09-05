@@ -4,11 +4,10 @@
     ViewBag.Title = "GetPeople";
     AjaxOptions ajaxOpts = new AjaxOptions
     {
-        UpdateTargetId = "tableBody",
         Url = Url.Action("GetPeopleData"),
         LoadingElementId = "loading",
         LoadingElementDuration = 1000,
-        Confirm = "Do you wish to request new data?"
+        OnSuccess = "processData"
     };
 }
 <script type="text/javascript">
@@ -56,7 +55,7 @@
                 new { selectedRole = role},
                 new AjaxOptions
                 {
-                    Url = Url.Action("GetPeopleDataJson", new { selectedRole = role }),
+                    Url = Url.Action("GetPeopleData", new { selectedRole = role }),
                     OnSuccess = "processData"
                 })
         </div>
