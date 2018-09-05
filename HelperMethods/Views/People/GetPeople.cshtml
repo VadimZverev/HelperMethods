@@ -2,6 +2,10 @@
 @model string
 @{
     ViewBag.Title = "GetPeople";
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        UpdateTargetId = "tableBody"
+    };
 }
 
 <h2>Get People</h2>
@@ -13,12 +17,12 @@
             <th>Role</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="tableBody">
         @Html.Action("GetPeopleData", new { selectedRole = Model })
     </tbody>
 </table>
 
-@using (Html.BeginForm())
+@using (Ajax.BeginForm("GetPeopleData", ajaxOpts))
 {
     <div>
         @Html.DropDownList("selectedRole", new SelectList(
