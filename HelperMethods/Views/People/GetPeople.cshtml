@@ -4,7 +4,8 @@
     ViewBag.Title = "GetPeople";
     AjaxOptions ajaxOpts = new AjaxOptions
     {
-        UpdateTargetId = "tableBody"
+        UpdateTargetId = "tableBody",
+        Url = Url.Action("GetPeopleData")
     };
 }
 
@@ -22,7 +23,7 @@
     </tbody>
 </table>
 
-@using (Ajax.BeginForm("GetPeopleData", ajaxOpts))
+@using (Ajax.BeginForm(ajaxOpts))
 {
     <div>
         @Html.DropDownList("selectedRole", new SelectList(
