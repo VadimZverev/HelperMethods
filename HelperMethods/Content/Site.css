@@ -1,13 +1,15 @@
 ﻿table, td, th {
     border: thin solid black;
-    border-color: lemonchiffon;
+    border-collapse: collapse;
+    padding: 5px;
+    background-color: lemonchiffon;
     text-align: left;
     margin: 10px 0;
 }
 
 div.load {
     color: red;
-    margin: 10PX 0;
+    margin: 10px 0;
     font-weight: bold;
 }
 
