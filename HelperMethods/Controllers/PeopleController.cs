@@ -29,6 +29,7 @@ namespace HelperMethods.Controllers
             if (selectedRole != "All")
             {
                 Role selected = (Role)Enum.Parse(typeof(Role), selectedRole);
+                data = personData.Where(p => p.Role == selected);
             }
             return PartialView(data);
         }
